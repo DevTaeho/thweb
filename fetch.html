@@ -20,9 +20,11 @@
     <!--
     내 생각엔
     client가 server에 html 파일 정보를 요청하고
-    이 요청된 정보가 text()에 의해 response로 나타남
-    response인 text 정보를 가지고
-    응용하는 것일 듯
+    then => 요청이 끝나면
+    fetch 함수의 리턴 값인 response가 매개 변수로 들어갈 거임
+    이 response를 text() 함수를 통해 문자로 바꿈(아마 바이트 코드가 아니었을까?)
+    바꾼 텍스트를 다시 매개변수로 넣고
+    이 값을 innerHTML을 통해 출력함
     -->
   </body>
 </html>
