@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
+  <script src="fetch.js"></script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -13,25 +14,13 @@
   ">
   <ol>
     <li><a onclick="
-      fetch('html').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-      });
+      fetch_print('html');
     ">HTML</a></li>
     <li><a onclick="
-      fetch('css').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-      });
+      fetch_print('css');
     ">CSS</a></li>
     <li><a onclick="
-      fetch('javascript').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-      });
+      fetch_print('javascript');
     ">JavaScript</a></li>
   </ol>
   <article>
