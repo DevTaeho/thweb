@@ -5,7 +5,7 @@ function fetch_print(self){
       alert('Not found');
     }else{
       response.text().then(function(text){
-        document.querySelector('article').innerHTML  text;
+        document.querySelector('article').innerHTML = text;
       })
     }
   });
