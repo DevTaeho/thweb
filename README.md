@@ -24,7 +24,7 @@ document.querySelector('article').innerHTML = text;
 
 https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta 를 참조하면
 
-<meta> 요소는 <head> 안에 있어야 하는데
+meta 요소는 head 안에 있어야 하는데
 
 js에서 사용한
 document.querySelector('article').innerHTML = text
