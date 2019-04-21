@@ -8,7 +8,7 @@ function fetch_print(self){
         document.querySelector('article').innerHTML  text;
       })
     }
-  })
+  });
 }
 
 var _hash = window.location.hash;
