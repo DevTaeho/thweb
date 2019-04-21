@@ -12,7 +12,7 @@ var my_Fetch{
     })
   }
 
-  var _hash = location.hash;
+  var _hash = window.location.hash;
   if(_hash){
     fetch_print(_hash.substr(2));
   }else{
