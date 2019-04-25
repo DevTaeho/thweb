@@ -48,9 +48,10 @@ Facebook Login
 ---------------
 
 선행 ? : OAuth 2.0 인증 방법
+<hr/>
 
 Facebook에서 제공하는 JavaScript SDK를 통해 Federated Identity를 구현
-
+<hr/>
 
 우리가 Federated Identity를 사용하는 입장에선 Resource Owner는 ID, PW를 소유한 실제로 우리의 서비스를 사용할 유저이고
 
@@ -61,10 +62,13 @@ Resource Server는 연합 ID를 가진 Facebook, Google 같은 커다란 서버�
 OAuto 2.0에는 대략 3가지 방법이 있는데
 
 위 엘리먼트를 가지는 방법을 Resource Owner Password Credentials Grant 방식이라고 한다.
-
+<hr/>
 
 리소스 소유자가 클라이언트로 리소스(자신을 식별할)를 보내고
 
 클라이언트는 이 정보를 통해 서버에 Access Token을 요청한다.
 
 요청하여 얻은 Access Token 정보로 리소스 서버와 통신하며 데이터를 요청한다. (API call with Access Token)
+
+## How
+<hr/>
