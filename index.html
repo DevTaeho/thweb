@@ -22,12 +22,14 @@
     fetch('list').then(function(response){
       response.text().then(function(text){
         var items = text.split(',');
+        var tags = '';
         //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
         for(var i in items){
           var aTag = '<a href="#!' + i + '" onclick="fetch_print(' + i + ');">' + i + '</a>'
             var tag = '<li>' + aTag + '</li>';
-            document.querySelector('#nav').innerHTML = tag;
+            tags += tag;
         }
+        document.querySelector('#nav').innerHTML = tags;
       })
     });
   </script>
