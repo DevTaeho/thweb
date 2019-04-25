@@ -71,4 +71,9 @@ OAuto 2.0에는 대략 3가지 방법이 있는데
 요청하여 얻은 Access Token 정보로 리소스 서버와 통신하며 데이터를 요청한다. (API call with Access Token)
 
 ## How
-<hr/>
+1. client로써 Facebook APP 등록
+2. 등록하고 facebook login 제품에 설정을 클릭하면
+3. 단계적인 설명을 확인하고 Next
+4. 마쳤다면, Settings -> Basic을 보면 APP ID와 Secret 이라는 client의 접속 정보를 확인할 수 있다
+5. Facebook Login의 문서 탭에 나온 예시대로 SDK를 Load 한다
+6. 문서의 예시대로 따라해본다
