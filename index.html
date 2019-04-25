@@ -25,9 +25,11 @@
         console.log(items);
         var tags = '';
         //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
-        for(var i in items){
-          var tag = '<li>' + i + '</li>';
-          tags += tag;
+        var i=0;
+        while(i < items.length){
+          var tag = '<li>' + items[i] + '</li>';
+          tags = tags + tag;
+          i+=1;
         }
         document.querySelector('#nav').innerHTML = tags;
       })
