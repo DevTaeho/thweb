@@ -16,7 +16,7 @@
     <script>
       fetch('list').then(function(response){
         response.text().then(funtion(text){
-            document.querySelector('nav').innerHTML = text;
+            document.querySelector('#nav').innerHTML = text;
         })
       });
     </script>
