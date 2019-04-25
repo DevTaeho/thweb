@@ -30,3 +30,13 @@ js에서 사용한
 document.querySelector('article').innerHTML = text
 부분이 meta 요소의 content-security-policy를 가져와서
 정책 위반으로 나타난듯
+
+===== 04/25 =====
+=================
+
+fetch를 통해 데이터와 로직을 분리
+
+순서 리스트의 정보인 <li> 태그들을 외부 파일인 'list'로 분리
+
+
+=> index.html을 수정할 필요 없이 데이터 파일을 수정함으로써 로직 변경을 하지 않음
