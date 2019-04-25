@@ -1,12 +1,54 @@
 <!doctype html>
 <html>
+
 <head>
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
   <script src="fetch.js"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '2272403993077411',
+        cookie: true, // enable cookies to allow the server to access
+        // the session
+        xfbml: true, // parse social plugins on this page
+        version: 'v3.2' // The Graph API version to use for the call
+      });
+
+      // Now that we've initialized the JavaScript SDK, we call
+      // FB.getLoginStatus().  This function gets the state of the
+      // person visiting this page and can return one of three states to
+      // the callback you provide.  They can be:
+      //
+      // 1. Logged into your app ('connected')
+      // 2. Logged into Facebook, but not your app ('not_authorized')
+      // 3. Not logged into Facebook and can't tell if they are logged into
+      //    your app or not.
+      //
+      // These three cases are handled in the callback function.
+
+      var callback = function(response){
+        console.log(response);
+        //statusChangeCallback(response);
+      }
+      FB.getLoginStatus(callback);
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head>
+
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
@@ -19,21 +61,22 @@
 
   </article>
   <script>
-    fetch('list').then(function(response){
-      response.text().then(function(text){
+    fetch('list').then(function(response) {
+      response.text().then(function(text) {
         var items = text.split(',');
         console.log(items);
         var tags = '';
         //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
-        var i=0;
-        while(i < items.length){
+        var i = 0;
+        while (i < items.length) {
           var tag = '<li><a href="#!' + items[i].trim() + '" onclick="fetch_print(\'' + items[i].trim() + '\')">' + items[i].trim() + '</a></li>';
           tags = tags + tag;
-          i+=1;
+          i += 1;
         }
         document.querySelector('#nav').innerHTML = tags;
       })
     });
   </script>
 </body>
+
 </html>
