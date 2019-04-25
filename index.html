@@ -21,7 +21,13 @@
   <script>
     fetch('list').then(function(response){
       response.text().then(function(text){
-          document.querySelector('#nav').innerHTML = text;
+        var items = text.split(',');
+        //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
+        for(var i in items){
+          var aTag = '<a href="#!' + i + '" onclick="fetch_print(' + i + ');">' + i + '</a>'
+            var tag = '<li>' + aTag + '</li>';
+            document.querySelector('#nav').innerHTML = tag;
+        }
       })
     });
   </script>
