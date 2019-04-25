@@ -13,18 +13,17 @@
     nightDayHandler(this);
   ">
   <ol id="nav">
-    <script>
-      fetch('list').then(function(response){
-        response.text().then(funtion(text){
-            document.querySelector('#nav').innerHTML = text;
-        })
-      });
-    </script>
 
   </ol>
   <article>
 
   </article>
-  </p>
+  <script>
+    fetch('list').then(function(response){
+      response.text().then(funtion(text){
+          document.querySelector('#nav').innerHTML = text;
+      })
+    });
+  </script>
 </body>
 </html>
