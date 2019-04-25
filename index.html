@@ -22,6 +22,7 @@
     fetch('list').then(function(response){
       response.text().then(function(text){
         var items = text.split(',');
+        console.log(items);
         var tags = '';
         //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
         for(var i in items){
