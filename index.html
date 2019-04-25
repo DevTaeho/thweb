@@ -8,6 +8,16 @@
   <script src="colors.js"></script>
   <script src="fetch.js"></script>
   <script>
+    var checkLoginStatus = function(response) {
+      console.log(response);
+      //statusChangeCallback(response);
+      if (response.status === 'connected') {
+        document.querySelector('#authBtn').value = 'Logout';
+      } else {
+        document.querySelector('#authBtn').value = 'Login';
+      }
+    }
+
     window.fbAsyncInit = function() {
       FB.init({
         appId: '2272403993077411',
@@ -29,16 +39,7 @@
       //
       // These three cases are handled in the callback function.
 
-      var callback = function(response){
-        console.log(response);
-        //statusChangeCallback(response);
-        if(response.status === 'connected'){
-          document.querySelector('#authBtn').value = 'Logout';
-        }else{
-          document.querySelector('#authBtn').value = 'Login';
-        }
-      }
-      FB.getLoginStatus(callback);
+      FB.getLoginStatus(checkLoginStatus);
 
     };
 
@@ -59,10 +60,12 @@
     if(this.value === 'Login'){
       FB.login(function(response){
         console.log('login =>', response);
+        checkLoginStatus(response);
       });
     }else{
       FB.logout(function(response){
         console.log('logout =>', response);
+        checkLoginStatus(response);
       });
     }
   ">
