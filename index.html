@@ -27,7 +27,7 @@
         //<li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
         var i=0;
         while(i < items.length){
-          var tag = '<li>' + items[i] + '</li>';
+          var tag = '<li><a href="#!' + items[i] + '" onclick="fetch_print(\'' + items[i] + '\')">' + items[i] + '</a></li>';
           tags = tags + tag;
           i+=1;
         }
