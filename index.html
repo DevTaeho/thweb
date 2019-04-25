@@ -5,17 +5,22 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
+  <script src="fetch.js"></script>
 </head>
 <body>
-  <script src="fetch.js"></script>
   <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">
-  <ol>
-    <li><a href="#!html" onclick="fetch_print('html');">HTML</a></li>
-    <li><a href="#!css" onclick="fetch_print('css');">CSS</a></li>
-    <li><a href="#!javascript" onclick="fetch_print('javascript');">JavaScript</a></li>
+  <ol id="nav">
+    <script>
+      fetch('list').then(function(response){
+        response.text().then(funtion(text){
+            document.querySelector('nav').innerHTML = text;
+        })
+      });
+    </script>
+
   </ol>
   <article>
 
