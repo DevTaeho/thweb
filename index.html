@@ -20,7 +20,7 @@
   </article>
   <script>
     fetch('list').then(function(response){
-      response.text().then(funtion(text){
+      response.text().then(function(text){
           document.querySelector('#nav').innerHTML = text;
       })
     });
